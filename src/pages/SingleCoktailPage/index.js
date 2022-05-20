@@ -1,0 +1,1 @@
+export { SingleCoktailPage } from "./SingleCoktailPage";

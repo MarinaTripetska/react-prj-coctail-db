@@ -1,4 +1,12 @@
+import { Outlet } from "react-router-dom";
+import { AlphabetNavigationList } from "../../components/AlphabetNavigationList";
+
 const MainPage = () => {
-  return <p>All coctails</p>;
+  return (
+    <>
+      {/* <Outlet />
+      <AlphabetNavigationList /> */}
+    </>
+  );
 };
 export default MainPage;

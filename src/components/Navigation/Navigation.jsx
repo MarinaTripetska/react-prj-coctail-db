@@ -1,14 +1,25 @@
-import { NavLink } from "react-router-dom";
+import { GridList, Nav, NavLinkStyled } from "./Navigation.styled";
 
 export const Navigation = () => {
   return (
-    <nav>
-      <ul>
+    <Nav>
+      <GridList>
         <li>
-          <NavLink to="/">All coctails</NavLink>
+          <NavLinkStyled to="/">Main page (may be logo here?)</NavLinkStyled>
         </li>
-        <li></li>
-      </ul>
-    </nav>
+        <li>
+          <NavLinkStyled to="/alcoholic">Alcoholic</NavLinkStyled>
+        </li>
+        <li>
+          <NavLinkStyled to="/non-alcoholic">Non Alcoholic</NavLinkStyled>
+        </li>
+        <li>
+          <NavLinkStyled to="/ordinary-drink">Ordinary Drink</NavLinkStyled>
+        </li>
+        <li>
+          <NavLinkStyled to="/cocktail">Cocktail</NavLinkStyled>
+        </li>
+      </GridList>
+    </Nav>
   );
 };
