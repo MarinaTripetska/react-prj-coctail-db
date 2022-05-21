@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-export const ListCoctails = ({ coktails }) => {
+export const ListCoctails = ({ drinks }) => {
   return (
     <ul>
-      {coktails.map((coktail) => (
-        <li key={coktail.idDrink}>
-          <Link to={`/coktail/${coktail.idDrink}`}>
+      {drinks.map((drink) => (
+        <li key={drink.idDrink}>
+          <Link to={`/drink/${drink.idDrink}`}>
             <div>
-              <img src={coktail.strDrinkThumb} alt={coktail.strDrink} />
-              <h2>{coktail.strDrink}</h2>
+              <img src={drink.strDrinkThumb} alt={drink.strDrink} />
+              <h2>{drink.strDrink}</h2>
             </div>
           </Link>
         </li>

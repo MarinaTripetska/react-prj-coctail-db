@@ -1,0 +1,1 @@
+export { DrinksCoktailView } from "./DrinksCoktailView";

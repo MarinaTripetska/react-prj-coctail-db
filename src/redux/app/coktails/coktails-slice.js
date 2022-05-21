@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const coktailsSlice = createApi({
-  reducerPath: "coctails",
+  reducerPath: "coktails",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://www.thecocktaildb.com/api/json/v1/1/",
   }),
 
-  // tagTypes: ["coctails"],
+  tagTypes: ["coktails", "coktail"],
 
   endpoints: (builder) => ({
     getCoctailsListByFirstLatter: builder.query({
@@ -14,7 +14,7 @@ export const coktailsSlice = createApi({
         url: `/search.php?f=${latter}`,
         method: "GET",
       }),
-      // providesTags: ["coctails"],
+      providesTags: ["coktails"],
     }),
 
     getOneCoctailById: builder.query({
@@ -22,7 +22,15 @@ export const coktailsSlice = createApi({
         url: `lookup.php?i=${id}`,
         method: "GET",
       }),
-      // providesTags: ["coctails"],
+      providesTags: ["coktail"],
+    }),
+
+    getCoktailsByName: builder.query({
+      query: (name) => ({
+        url: `search.php?s=${name}`,
+        method: "GET",
+      }),
+      providesTags: ["coktail"],
     }),
   }),
 });
@@ -30,4 +38,6 @@ export const coktailsSlice = createApi({
 export const {
   useGetCoctailsListByFirstLatterQuery,
   useGetOneCoctailByIdQuery,
+  // useGetCoktailsByNameQuery,
+  useLazyGetCoktailsByNameQuery,
 } = coktailsSlice;

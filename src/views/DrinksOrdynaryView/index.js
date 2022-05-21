@@ -1,0 +1,1 @@
+export { DrinksOrdynaryView } from "./DrinksOrdynaryView";

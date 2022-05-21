@@ -1,0 +1,1 @@
+export { RandomDrinkView } from "./RandomDrinkView";

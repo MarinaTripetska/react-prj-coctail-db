@@ -7,18 +7,27 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { Toaster } from "react-hot-toast";
 import GlobalStyle from "./GlobalStyles";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
+// Create a client
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <GlobalStyle />
+      <QueryClientProvider client={queryClient}>
+        <Provider store={store}>
+          <GlobalStyle />
 
-        <App />
+          <App />
 
-        <Toaster />
-      </Provider>
+          <Toaster />
+        </Provider>
+
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

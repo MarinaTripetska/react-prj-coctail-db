@@ -1,0 +1,1 @@
+export { DrinksAlcocholicView } from "./DrinksAlcocholicView";

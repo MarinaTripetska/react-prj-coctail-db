@@ -10,7 +10,9 @@ export const AlphabetNavigationList = () => {
     <GridList>
       {ALPHABET.capitalize.map((letter) => (
         <GridItem key={letter}>
-          <NavLinkStyled to={letter.toLowerCase()}>{letter}</NavLinkStyled>
+          <NavLinkStyled to={`/drinks/${letter.toLowerCase()}`}>
+            {letter}
+          </NavLinkStyled>
         </GridItem>
       ))}
     </GridList>

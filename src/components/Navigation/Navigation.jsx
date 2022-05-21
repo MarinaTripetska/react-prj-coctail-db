@@ -5,19 +5,23 @@ export const Navigation = () => {
     <Nav>
       <GridList>
         <li>
-          <NavLinkStyled to="/">Main page (may be logo here?)</NavLinkStyled>
+          <NavLinkStyled to="/">Main page</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/alcoholic">Alcoholic</NavLinkStyled>
+          <NavLinkStyled to="/drinks/alcoholic">Alcoholic</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/non-alcoholic">Non Alcoholic</NavLinkStyled>
+          <NavLinkStyled to="/drinks/non-alcoholic">
+            Non Alcoholic
+          </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/ordinary-drink">Ordinary Drink</NavLinkStyled>
+          <NavLinkStyled to="/drinks/ordinary-drink">
+            Ordinary Drink
+          </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/cocktail">Cocktail</NavLinkStyled>
+          <NavLinkStyled to="/drinks/cocktail">Cocktail</NavLinkStyled>
         </li>
       </GridList>
     </Nav>

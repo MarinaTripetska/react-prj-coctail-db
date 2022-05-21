@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const GridList = styled.ul`
-  margin: 500px auto 50px auto;
   width: 100%;
   max-width: 800px;
   display: flex;
