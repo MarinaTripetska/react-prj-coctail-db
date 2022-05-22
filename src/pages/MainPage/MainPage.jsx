@@ -4,6 +4,8 @@ import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput";
 import { DrinksByNameView } from "views/DrinksByNameView";
 import axios from "axios";
+import { MainContainer } from "components/BasicStyledComponents/BasicStyledComponents";
+import { MainThumb } from "./MainPage.styled";
 
 const MainPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -34,21 +36,23 @@ const MainPage = () => {
   const hasDrinks = Boolean(data?.data?.drinks);
 
   return (
-    <>
-      <SearchInput onSubmit={newSearch} />
-      <AlphabetNavigationList />
+    <MainThumb>
+      <MainContainer>
+        <SearchInput onSubmit={newSearch} />
+        <AlphabetNavigationList />
 
-      {isLoading && <p>Load list</p>}
-      {isSuccess && !hasDrinks && <p>No drinks with name {searchQuery} </p>}
-      {isSuccess && hasDrinks ? (
-        <DrinksByNameView
-          drinks={data?.data?.drinks}
-          searchValue={searchQuery}
-        />
-      ) : (
-        <Outlet />
-      )}
-    </>
+        {isLoading && <p>Load list...</p>}
+        {isSuccess && !hasDrinks && <p>No drinks with name {searchQuery} </p>}
+        {isSuccess && hasDrinks ? (
+          <DrinksByNameView
+            drinks={data?.data?.drinks}
+            searchValue={searchQuery}
+          />
+        ) : (
+          <Outlet />
+        )}
+      </MainContainer>
+    </MainThumb>
   );
 };
 export default MainPage;

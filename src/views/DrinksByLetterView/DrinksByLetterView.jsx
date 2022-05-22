@@ -6,7 +6,7 @@ import axios from "axios";
 export const DrinksByLetterView = () => {
   const { letter } = useParams();
 
-  const { data, isError, error, isSuccess, isFetching } = useQuery(
+  const { data, isSuccess, isFetching } = useQuery(
     ["drinks/byFirstLetter", letter],
     () =>
       axios.get(
