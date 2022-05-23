@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom";
+import { Image, LinkStyled, Title, TitleThumb } from "./Card.styled";
 
 export const Card = ({ id, imgUrl, name }) => {
   return (
-    <Link to={`/drink/${id}`}>
-      <img src={imgUrl} alt={name} />
-      <h2>{name}</h2>
-    </Link>
+    <LinkStyled to={`/drink/${id}`}>
+      <Image src={imgUrl} alt={name} />
+
+      <TitleThumb>
+        <Title>{name}</Title>
+      </TitleThumb>
+    </LinkStyled>
   );
 };

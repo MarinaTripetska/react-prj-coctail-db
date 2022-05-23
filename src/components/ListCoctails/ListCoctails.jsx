@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
+import { MainContainer } from "components/BasicStyledComponents/BasicStyledComponents";
+import { Card } from "components/Card";
+import { GridItem, GridList } from "./ListCoctails.styled";
 
 export const ListCoctails = ({ drinks }) => {
   return (
-    <ul>
-      {drinks.map((drink) => (
-        <li key={drink.idDrink}>
-          <Link to={`/drink/${drink.idDrink}`}>
-            <div>
-              <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-              <h2>{drink.strDrink}</h2>
-            </div>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <MainContainer>
+      <GridList>
+        {drinks.map(({ idDrink, strDrink, strDrinkThumb }) => (
+          <GridItem key={idDrink}>
+            <Card id={idDrink} name={strDrink} imgUrl={strDrinkThumb} />
+          </GridItem>
+        ))}
+      </GridList>
+    </MainContainer>
   );
 };

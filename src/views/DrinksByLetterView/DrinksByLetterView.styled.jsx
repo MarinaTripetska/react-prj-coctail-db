@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import Background from "../../assets/images/brick-wall.jpg";
+
 export const Thumb = styled.div`
-  background-color: var(--main-bg-color);
+  padding: 60px 0;
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
   background-image: url(${Background});
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
   min-height: 80vh;
 `;
 
 export const Title = styled.h1`
-  margin-top: 15px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 40px;

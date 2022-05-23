@@ -4,9 +4,9 @@ export const FooterStyled = styled.footer`
   height: 100px;
 
   font-size: 18px;
-  line-height: 2;
+  /* line-height: 2; */
   font-weight: bold;
-
+  padding: 20px 0;
   color: var(--txt-color-grey);
   background-color: var(--main-bg-color);
 `;

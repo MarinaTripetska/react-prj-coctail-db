@@ -4,16 +4,16 @@ import { NavLink } from "react-router-dom";
 export const GridList = styled.ul`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
 `;
 
-export const GridItem = styled.li`
-  position: relative;
-`;
+export const GridItem = styled.li``;
 
 export const NavLinkStyled = styled(NavLink)`
   font-weight: 700;
-  font-size: 40px;
+  font-size: 38px;
+  line-height: 1.1;
   text-decoration: none;
 
   background-color: #2aa5a0;

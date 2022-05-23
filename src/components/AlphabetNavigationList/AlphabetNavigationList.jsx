@@ -1,3 +1,4 @@
+import { MainContainer } from "components/BasicStyledComponents/BasicStyledComponents";
 import { ALPHABET } from "../../constance/alphabet";
 import {
   GridList,
@@ -7,14 +8,16 @@ import {
 
 export const AlphabetNavigationList = () => {
   return (
-    <GridList>
-      {ALPHABET.capitalize.map((letter) => (
-        <GridItem key={letter}>
-          <NavLinkStyled to={`/drinks/${letter.toLowerCase()}`}>
-            {letter}
-          </NavLinkStyled>
-        </GridItem>
-      ))}
-    </GridList>
+    <MainContainer>
+      <GridList>
+        {ALPHABET.capitalize.map((letter) => (
+          <GridItem key={letter}>
+            <NavLinkStyled to={`/drinks/${letter.toLowerCase()}`}>
+              {letter}
+            </NavLinkStyled>
+          </GridItem>
+        ))}
+      </GridList>
+    </MainContainer>
   );
 };

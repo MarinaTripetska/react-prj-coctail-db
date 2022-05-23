@@ -74,22 +74,33 @@ ul,
 li
  {
   margin: 0;
+  padding:0;
 }
+
 body {
   min-height: 100vh;
   line-height: 1.5;
-   font-family: 'Poppins', sans-serif;
-     font-style: normal;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
   font-weight: 400;
 }
+
 ul{
   list-style: none;
-    padding: 0;
+  padding: 0;
 }
+
 a {
 text-decoration:none;
 color: inherit;
 }
+
+img{
+  display: block;
+  max-width: 100%fit-content;
+  height: auto;
+}
+
 
 input,
 button {
