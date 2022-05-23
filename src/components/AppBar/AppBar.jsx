@@ -1,15 +1,12 @@
 import { MainContainer } from "components/BasicStyledComponents/BasicStyledComponents";
+import { Logo } from "components/Logo";
 import { Navigation } from "components/Navigation";
-import { BiDrink } from "react-icons/bi";
-import { Header, LogoLink } from "./AppBar.styled";
+import { Header } from "./AppBar.styled";
 
 export const AppBar = () => {
   return (
     <Header>
-      <LogoLink to="/">
-        <BiDrink />
-        <span>Best Home Barman</span>
-      </LogoLink>
+      <Logo />
 
       <MainContainer>
         <Navigation />

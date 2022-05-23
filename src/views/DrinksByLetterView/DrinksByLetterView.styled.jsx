@@ -17,14 +17,6 @@ export const Thumb = styled.div`
   min-height: 80vh;
 `;
 
-export const Title = styled.h1`
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 40px;
-  text-align: center;
-  color: var(--txt-color-grey);
-`;
-
 export const InfoTxt = styled.p`
   margin-top: 100px;
   font-weight: 400;

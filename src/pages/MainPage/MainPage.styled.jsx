@@ -12,6 +12,7 @@ export const NoResultTxt = styled.p`
   text-align: center;
   color: var(--txt-color-white);
 `;
+
 export const BoldTxt = styled.span`
   text-transform: uppercase;
   font-weight: 600;

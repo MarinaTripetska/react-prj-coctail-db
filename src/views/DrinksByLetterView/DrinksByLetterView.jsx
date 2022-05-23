@@ -2,7 +2,10 @@ import { ListCoctails } from "components/ListCoctails";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { BoldTxt, InfoTxt, Thumb, Title } from "./DrinksByLetterView.styled";
+import { BoldTxt, InfoTxt, Thumb } from "./DrinksByLetterView.styled";
+import { Title } from "components/Title";
+import { Loader } from "components/Loader";
+import { Toast } from "components/Toast";
 
 export const DrinksByLetterView = () => {
   const { letter } = useParams();
@@ -12,12 +15,16 @@ export const DrinksByLetterView = () => {
     () =>
       axios.get(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
-      )
+      ),
+    {
+      onError: (error) => Toast.notifyERROR(error.message),
+    }
   );
+
   const hasDrinks = data?.data?.drinks;
 
   if (isFetching) {
-    return <p>...Loading</p>;
+    return <Loader />;
   }
 
   if (isSuccess && !hasDrinks) {
@@ -35,14 +42,11 @@ export const DrinksByLetterView = () => {
   if (isSuccess && hasDrinks) {
     return (
       <Thumb>
-        <Title>{letter}</Title>
+        <Title> {letter}</Title>
         <ListCoctails drinks={data.data.drinks} />
       </Thumb>
     );
   }
-  // if (isError) {
-  //   console.log(error);
-  // }
 };
 
 export default DrinksByLetterView;
