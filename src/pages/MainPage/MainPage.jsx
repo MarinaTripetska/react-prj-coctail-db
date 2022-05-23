@@ -4,7 +4,9 @@ import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput";
 import { DrinksByNameView } from "views/DrinksByNameView";
 import axios from "axios";
-import { MainThumb } from "./MainPage.styled";
+import { BoldTxt, MainThumb, NoResultTxt } from "./MainPage.styled";
+import { Loader } from "components/Loader";
+import { Toast } from "components/Toast";
 
 const MainPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -20,6 +22,9 @@ const MainPage = () => {
       ),
     {
       enabled: !!searchQuery,
+      onError: (error) => {
+        Toast.notifyERROR(error.message);
+      },
     }
   );
 
@@ -39,15 +44,22 @@ const MainPage = () => {
       <SearchInput onSubmit={newSearch} />
       <AlphabetNavigationList />
 
-      {isLoading && <p>Load list...</p>}
-      {isSuccess && !hasDrinks && <p>No drinks with name {searchQuery} </p>}
+      {isLoading && <Loader /> /*Loading drinks when we sherch by name */}
+
+      {
+        isSuccess && !hasDrinks && (
+          <NoResultTxt>
+            No drinks with name <BoldTxt> {searchQuery}</BoldTxt>{" "}
+          </NoResultTxt>
+        ) /*Nothink found when we sherch by name */
+      }
       {isSuccess && hasDrinks ? (
         <DrinksByNameView
           drinks={data?.data?.drinks}
           searchValue={searchQuery}
-        />
+        /> /*Founded drinks was sherch by name */
       ) : (
-        <Outlet />
+        <Outlet /> /*or Alphabet searching*/
       )}
     </MainThumb>
   );
