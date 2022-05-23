@@ -2,6 +2,7 @@ import { ListCoctails } from "components/ListCoctails";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import axios from "axios";
+import { BoldTxt, InfoTxt, Thumb, Title } from "./DrinksByLetterView.styled";
 
 export const DrinksByLetterView = () => {
   const { letter } = useParams();
@@ -14,20 +15,29 @@ export const DrinksByLetterView = () => {
       )
   );
   const hasDrinks = data?.data?.drinks;
+
   if (isFetching) {
     return <p>...Loading</p>;
   }
+
   if (isSuccess && !hasDrinks) {
     return (
-      <p>At now we havent any drinks that start from {letter.toUpperCase()}</p>
+      <Thumb>
+        <Title>{letter}</Title>
+        <InfoTxt>
+          At the moment we do not have any drinks starting with the letter
+          <BoldTxt> {letter}</BoldTxt>.
+        </InfoTxt>
+      </Thumb>
     );
   }
+
   if (isSuccess && hasDrinks) {
     return (
-      <>
-        <h1>{letter.toUpperCase()}</h1>
+      <Thumb>
+        <Title>{letter}</Title>
         <ListCoctails drinks={data.data.drinks} />
-      </>
+      </Thumb>
     );
   }
   // if (isError) {

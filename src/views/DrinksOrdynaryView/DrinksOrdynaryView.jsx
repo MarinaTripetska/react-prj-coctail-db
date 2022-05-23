@@ -1,3 +1,7 @@
 export const DrinksOrdynaryView = () => {
-  return <p>Drinks Ordynary View</p>;
+  return (
+    <main>
+      <p>Drinks Ordynary View</p>
+    </main>
+  );
 };

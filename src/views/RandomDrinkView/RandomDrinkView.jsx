@@ -5,13 +5,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { useNavigate } from "react-router-dom";
 import { StyledThumb, Title } from "./RandomDrinkView.styled";
-// import styled from "styled-components";
-
-// const StyledThumb = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   margin: 40px 0;
-// `;
 
 const coktailCounter = [1, 2, 3, 4, 5, 6];
 
@@ -58,7 +51,7 @@ export const RandomDrinkView = () => {
           //   );
           // }
 
-          if (coktailObj.isSuccess) {
+          if (drink && coktailObj.isSuccess) {
             return (
               <RandomDrinkCard
                 key={drink.idDrink}

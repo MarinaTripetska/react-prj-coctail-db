@@ -1,3 +1,7 @@
 export const DrinksCoktailView = () => {
-  return <p>DrinksCoktailView</p>;
+  return (
+    <main>
+      <p>DrinksCoktailView</p>
+    </main>
+  );
 };
