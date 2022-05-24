@@ -1,21 +1,20 @@
 import { ListCoctails } from "components/ListCoctails";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import axios from "axios";
 import { BoldTxt, InfoTxt, Thumb } from "./DrinksByLetterView.styled";
 import { Title } from "components/Title";
 import { Loader } from "components/Loader";
 import { Toast } from "components/Toast";
+import { getDrinksByFirstLetter } from "APIoperations/getRequests";
 
 export const DrinksByLetterView = () => {
   const { letter } = useParams();
 
   const { data, isSuccess, isFetching } = useQuery(
     ["drinks/byFirstLetter", letter],
-    () =>
-      axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
-      ),
+
+    () => getDrinksByFirstLetter(letter),
+
     {
       onError: (error) => Toast.notifyERROR(error.message),
     }

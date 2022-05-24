@@ -6,9 +6,9 @@ import { SingleDrinkPage } from "pages/SingleDrinkPage";
 import { DrinksByLetterView } from "views/DrinksByLetterView";
 import { RandomDrinkView } from "views/RandomDrinkView";
 import { ManualyuSearchView } from "views/ManualyuSearchView";
-import { DrinksAlcocholicView } from "views/DrinksAlcocholicView";
-import { DrinksNonAlcocholicView } from "views/DrinksNonAlcocholicView";
-import { DrinksOrdynaryView } from "views/DrinksOrdynaryView";
+import { DrinksAlcoholicView } from "views/DrinksAlcoholicView";
+import { DrinksNonAlcoholicView } from "views/DrinksNonAlcoholicView";
+import { DrinksOrdinaryView } from "views/DrinksOrdinaryView";
 import { DrinksCoktailView } from "views/DrinksCoktailView";
 import { Footer } from "components/Footer";
 
@@ -31,14 +31,19 @@ function App() {
           </Route>
         </Route>
 
-        <Route path="drinks/alcoholic" element={<DrinksAlcocholicView />} />
+        <Route path="drinks/alcoholic" element={<DrinksAlcoholicView />} />
+
         <Route
           path="drinks/non-alcoholic"
-          element={<DrinksNonAlcocholicView />}
+          element={<DrinksNonAlcoholicView />}
         />
-        <Route path="drinks/ordinary-drink" element={<DrinksOrdynaryView />} />
+
+        <Route path="drinks/ordinary-drink" element={<DrinksOrdinaryView />} />
+
         <Route path="drinks/cocktail" element={<DrinksCoktailView />} />
+
         <Route path="/drink/:drinksId" element={<SingleDrinkPage />} />
+
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
 

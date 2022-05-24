@@ -1,4 +1,3 @@
-import axios from "axios";
 import { RandomDrinkCard } from "components/RandomDrinkCard";
 import { useQueries } from "react-query";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -8,8 +7,9 @@ import { Gradient, StyledThumb, TitleThumb } from "./RandomDrinkView.styled";
 import { Title } from "components/Title";
 import { Logo } from "components/Logo";
 import { Loader } from "components/Loader";
+import { getRandomDrink } from "APIoperations/getRequests";
 
-const coktailCounter = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const coktailCounter = [1, 2, 3, 4, 5, 6, 7, 8];
 
 export const RandomDrinkView = () => {
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ export const RandomDrinkView = () => {
     coktailCounter.map((nr) => {
       return {
         queryKey: ["randomCoctail", `id:${nr}`],
-        queryFn: () =>
-          axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php"),
+
+        queryFn: getRandomDrink,
 
         cacheTime: 0,
         refetchOnMount: false,

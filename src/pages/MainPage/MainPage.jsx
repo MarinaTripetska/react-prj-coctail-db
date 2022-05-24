@@ -3,10 +3,10 @@ import { AlphabetNavigationList } from "components/AlphabetNavigationList";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput";
 import { DrinksByNameView } from "views/DrinksByNameView";
-import axios from "axios";
 import { BoldTxt, MainThumb, NoResultTxt } from "./MainPage.styled";
 import { Loader } from "components/Loader";
 import { Toast } from "components/Toast";
+import { getDrinksByName } from "APIoperations/getRequests";
 
 const MainPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,10 +16,9 @@ const MainPage = () => {
   //activate by search form submit:
   const { data, isSuccess, isLoading } = useQuery(
     ["drinks", searchQuery],
-    () =>
-      axios.get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchQuery}`
-      ),
+
+    () => getDrinksByName(searchQuery),
+
     {
       enabled: !!searchQuery,
       onError: (error) => {

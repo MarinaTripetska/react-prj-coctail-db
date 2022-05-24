@@ -1,15 +1,15 @@
-import { getCoktailDrinks } from "APIoperations/getRequests";
+import { getOrdinaryDrinks } from "APIoperations/getRequests";
 import { ListCoctails } from "components/ListCoctails";
 import { Loader } from "components/Loader";
 import { Title } from "components/Title";
 import { Toast } from "components/Toast";
 import { useQuery } from "react-query";
 
-export const DrinksCoktailView = () => {
+export const DrinksOrdinaryView = () => {
   const { data, isSuccess, isFetching } = useQuery(
-    ["drinks/Coktails"],
+    ["drinks/Ordynary"],
 
-    getCoktailDrinks,
+    getOrdinaryDrinks,
 
     {
       onError: (error) => Toast.notifyERROR(error.message),
@@ -25,7 +25,7 @@ export const DrinksCoktailView = () => {
   if (isSuccess && hasDrinks) {
     return (
       <main>
-        <Title>Coktails</Title>
+        <Title>Ordinary drinks</Title>
         <ListCoctails drinks={data.data.drinks} />
       </main>
     );
