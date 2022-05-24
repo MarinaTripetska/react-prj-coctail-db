@@ -17,6 +17,7 @@ const LogoLink = styled(Link)`
 
   svg {
     font-size: 60px;
+    color: var(--txt-color-blue);
   }
 `;
 

@@ -30,7 +30,7 @@ export const SearchInput = ({ onSubmit }) => {
         onChange={(e) => setValue(e.target.value)}
         type="text"
         value={value}
-        placeholder="Find coktail by name"
+        placeholder="Find drink by name"
       />
     </Form>
   );

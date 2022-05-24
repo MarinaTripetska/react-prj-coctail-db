@@ -24,6 +24,7 @@ const DrinksAlcoholicView = load("views/DrinksAlcoholicView");
 const DrinksNonAlcoholicView = load("views/DrinksNonAlcoholicView");
 const DrinksOrdinaryView = load("views/DrinksOrdinaryView");
 const DrinksCoktailView = load("views/DrinksCoktailView");
+const DrinksShakeView = load("views/DrinksShakeView");
 const SingleDrinkPage = load("pages/SingleDrinkPage");
 
 const MainThumb = styled.main`
@@ -64,6 +65,8 @@ function App() {
             />
 
             <Route path="drinks/cocktail" element={<DrinksCoktailView />} />
+
+            <Route path="drinks/shake" element={<DrinksShakeView />} />
 
             <Route path="/drink/:drinksId" element={<SingleDrinkPage />} />
 

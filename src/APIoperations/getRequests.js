@@ -43,7 +43,10 @@ const getCoktailDrinks = async () => {
   const resp = await baseUrl.get(`filter.php?c=Cocktail`);
   return resp;
 };
-
+const getShakeDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Shake`);
+  return resp;
+};
 export {
   getDrinksByName,
   getDrinksByFirstLetter,
@@ -52,5 +55,6 @@ export {
   getAlcocholicDrinks,
   getNonAlcocholicDrinks,
   getOrdinaryDrinks,
+  getShakeDrinks,
   getCoktailDrinks,
 };

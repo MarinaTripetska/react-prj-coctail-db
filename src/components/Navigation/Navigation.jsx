@@ -23,7 +23,11 @@ export const Navigation = () => {
         <li>
           <NavLinkStyled to="/drinks/cocktail">Cocktails</NavLinkStyled>
         </li>
+        <li>
+          <NavLinkStyled to="/drinks/shake">Shake</NavLinkStyled>
+        </li>
       </GridList>
     </Nav>
   );
 };
+///drinks/shake
