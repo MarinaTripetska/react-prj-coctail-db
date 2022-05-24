@@ -1,1 +1,1 @@
-export { ManualySearchView } from "./ManualySearchView";
+export { default } from "./ManualySearchView";

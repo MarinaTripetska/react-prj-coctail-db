@@ -1,1 +1,1 @@
-export { DrinksOrdinaryView } from "./DrinksOrdinaryView";
+export { default } from "./DrinksOrdinaryView";

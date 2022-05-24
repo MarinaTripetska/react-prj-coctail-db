@@ -9,12 +9,15 @@ const Overlay = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgba(252, 255, 252, 0.19);
+  user-select: none;
+  pointer-events: none;
 `;
 
 const Spinner = styled.div`
   position: relative;
   left: 50%;
   top: 50%;
+  pointer-events: none;
 `;
 
 export const Loader = () => {

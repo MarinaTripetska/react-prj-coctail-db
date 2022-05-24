@@ -1,1 +1,1 @@
-export { RandomDrinkView } from "./RandomDrinkView";
+export { default } from "./RandomDrinkView";

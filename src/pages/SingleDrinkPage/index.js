@@ -1,1 +1,1 @@
-export { SingleDrinkPage } from "./SingleDrinkPage";
+export { default } from "./SingleDrinkPage";

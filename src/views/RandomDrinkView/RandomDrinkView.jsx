@@ -11,7 +11,7 @@ import { getRandomDrink } from "APIoperations/getRequests";
 
 const coktailCounter = [1, 2, 3, 4, 5, 6, 7, 8];
 
-export const RandomDrinkView = () => {
+const RandomDrinkView = () => {
   const navigate = useNavigate();
 
   const randomCoktails = useQueries(
@@ -77,3 +77,5 @@ export const RandomDrinkView = () => {
     </StyledThumb>
   );
 };
+
+export default RandomDrinkView;

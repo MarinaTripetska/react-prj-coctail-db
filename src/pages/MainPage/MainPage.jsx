@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { AlphabetNavigationList } from "components/AlphabetNavigationList";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput";
-import { DrinksByNameView } from "views/DrinksByNameView";
+import DrinksByNameView from "views/DrinksByNameView";
 import { BoldTxt, NoResultTxt } from "./MainPage.styled";
 import { Loader } from "components/Loader";
 import { Toast } from "components/Toast";

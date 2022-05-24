@@ -1,1 +1,1 @@
-export { DrinksByLetterView } from "./DrinksByLetterView";
+export { default } from "./DrinksByLetterView";

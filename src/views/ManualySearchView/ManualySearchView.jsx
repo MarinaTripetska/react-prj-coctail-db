@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-export const ManualySearchView = () => {
+const ManualySearchView = () => {
   return <Outlet />;
 };
+export default ManualySearchView;

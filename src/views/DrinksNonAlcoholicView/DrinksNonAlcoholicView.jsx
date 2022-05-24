@@ -4,7 +4,7 @@ import { Loader } from "components/Loader";
 import { Toast } from "components/Toast";
 import { useQuery } from "react-query";
 
-export const DrinksNonAlcoholicView = () => {
+const DrinksNonAlcoholicView = () => {
   const { data, isSuccess, isFetching } = useQuery(
     ["drinks/NonAlcoholic"],
 
@@ -30,3 +30,5 @@ export const DrinksNonAlcoholicView = () => {
     );
   }
 };
+
+export default DrinksNonAlcoholicView;

@@ -6,7 +6,7 @@ import { Toast } from "components/Toast";
 import { getDrinksByFirstLetter } from "APIoperations/getRequests";
 import { ListDrinksTemplate } from "components/ListDrinksTemplate";
 
-export const DrinksByLetterView = () => {
+const DrinksByLetterView = () => {
   const { letter } = useParams();
 
   const { data, isSuccess, isFetching } = useQuery(
