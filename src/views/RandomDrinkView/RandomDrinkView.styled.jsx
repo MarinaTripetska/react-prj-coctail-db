@@ -24,7 +24,7 @@ export const TitleThumb = styled.div`
 
 export const Gradient = styled.div`
   position: absolute;
-  top: 140px;
+  top: 155px;
   z-index: 2;
   height: 600px;
   width: 1000px;

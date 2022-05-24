@@ -6,6 +6,7 @@ export const GridList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
+  padding: 20px 0;
 `;
 
 export const GridItem = styled.li``;

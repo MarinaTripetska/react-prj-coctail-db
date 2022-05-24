@@ -70,7 +70,7 @@ export const RandomDrinkView = () => {
               />
             );
           }
-
+          return <p>Thomething went wrong</p>;
           //question for UI designer: shold we show error here? in Slider???
         })}
       </Carousel>

@@ -1,0 +1,1 @@
+export { ListDrinksTemplate } from "./ListDrinksTemplate";

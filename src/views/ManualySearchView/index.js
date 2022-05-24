@@ -1,0 +1,1 @@
+export { ManualySearchView } from "./ManualySearchView";

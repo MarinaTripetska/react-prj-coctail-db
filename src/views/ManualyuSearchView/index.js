@@ -1,1 +1,0 @@
-export { ManualyuSearchView } from "./ManualyuSearchView";

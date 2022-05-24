@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const MainThumb = styled.main`
-  height: 100%;
-  background-color: var(--main-bg-color);
-`;
-
 export const NoResultTxt = styled.p`
   margin-top: 250px;
   font-weight: 400;

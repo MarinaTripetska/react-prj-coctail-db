@@ -17,11 +17,11 @@ export const Navigation = () => {
         </li>
         <li>
           <NavLinkStyled to="/drinks/ordinary-drink">
-            Ordinary Drink
+            Ordinary Drinks
           </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled to="/drinks/cocktail">Cocktail</NavLinkStyled>
+          <NavLinkStyled to="/drinks/cocktail">Cocktails</NavLinkStyled>
         </li>
       </GridList>
     </Nav>

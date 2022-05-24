@@ -1,21 +1,4 @@
 import styled from "styled-components";
-import Background from "../../assets/images/brick-wall.jpg";
-
-export const Thumb = styled.div`
-  padding: 60px 0;
-  margin-top: 35px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  background-image: url(${Background});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-
-  min-height: 80vh;
-`;
 
 export const InfoTxt = styled.p`
   margin-top: 100px;

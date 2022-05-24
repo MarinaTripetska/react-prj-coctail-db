@@ -1,7 +1,6 @@
 import { getOrdinaryDrinks } from "APIoperations/getRequests";
-import { ListCoctails } from "components/ListCoctails";
+import { ListDrinksTemplate } from "components/ListDrinksTemplate";
 import { Loader } from "components/Loader";
-import { Title } from "components/Title";
 import { Toast } from "components/Toast";
 import { useQuery } from "react-query";
 
@@ -24,10 +23,10 @@ export const DrinksOrdinaryView = () => {
 
   if (isSuccess && hasDrinks) {
     return (
-      <main>
-        <Title>Ordinary drinks</Title>
-        <ListCoctails drinks={data.data.drinks} />
-      </main>
+      <ListDrinksTemplate
+        title="Ordinary drinks"
+        drinksData={data.data.drinks}
+      />
     );
   }
 };
