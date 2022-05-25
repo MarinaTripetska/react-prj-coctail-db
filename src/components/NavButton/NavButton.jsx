@@ -4,27 +4,26 @@ import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   display: inline-block;
-  /* //   position: absolute;
-//   left: 30px;
-//   top: 15px; */
   padding: 5px;
   text-decoration: none;
   color: var(--txt-color-blue);
-  transition: color 350ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
+  transition: color 350ms ease-in-out;
+
+  :hover,
+  :focus {
     color: var(--txt-color-white);
   }
 `;
 
 export const NavButton = () => {
   const location = useLocation();
-  const pathname = location.state?.from?.pathname;
-  const search = location.state?.from?.search;
+  const pathname = location.state?.from;
+  const search = location.state?.search;
 
   return (
     <StyledLink
       to={pathname ? `${pathname}${search}` : "/"}
+      // to={pathname ? `${pathname}` : "/"}
       title="Comeback button"
     >
       <ImArrowLeft2 />

@@ -1,28 +1,27 @@
 import { GridList, Nav, NavLinkStyled } from "./Navigation.styled";
 import { useLocation } from "react-router-dom";
-import { NavButton } from "components/NavButton/NavButton";
+// import { NavButton } from "components/NavButton";
 
 export const Navigation = () => {
   const location = useLocation();
-  console.log(location);
-  const pathname = location.pathname;
-  const pathnameFrom = location.state?.from;
-  const searchFrom = location.search;
+  // const pathname = location.pathname;
+  // const pathnameFrom = location.state?.from;
+  // const searchFrom = location.state?.search;
 
   return (
     <Nav>
       <GridList>
-        {(pathnameFrom && pathname !== "/") || searchFrom ? (
+        {/* {pathnameFrom && pathname !== "/" && (
           <li>
             <NavButton />
           </li>
-        ) : null}
-
+        )} */}
         <li>
           <NavLinkStyled
             to="/"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Main page
@@ -33,6 +32,7 @@ export const Navigation = () => {
             to="/drinks/alcoholic"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Alcoholic
@@ -43,6 +43,7 @@ export const Navigation = () => {
             to="/drinks/non-alcoholic"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Non Alcoholic
@@ -53,6 +54,7 @@ export const Navigation = () => {
             to="/drinks/ordinary-drink"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Ordinary Drinks
@@ -63,6 +65,7 @@ export const Navigation = () => {
             to="/drinks/cocktail"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Cocktails
@@ -73,6 +76,7 @@ export const Navigation = () => {
             to="/drinks/shake"
             state={{
               from: location.pathname,
+              search: location.search,
             }}
           >
             Shake
@@ -82,4 +86,3 @@ export const Navigation = () => {
     </Nav>
   );
 };
-///drinks/shake

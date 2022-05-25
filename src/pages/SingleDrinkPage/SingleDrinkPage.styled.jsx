@@ -70,7 +70,6 @@ export const ContentThumb = styled.div`
 
 export const Image = styled.img`
   max-width: 600px;
-  /* margin: 120px 0 35px auto; */
 `;
 
 export const TextThumb = styled.div`
