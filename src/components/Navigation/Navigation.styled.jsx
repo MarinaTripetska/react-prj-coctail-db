@@ -20,8 +20,11 @@ export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   color: var(--txt-color-grey);
   cursor: pointer;
+  transition: color ease-in-out 350ms;
 
-  &.active {
+  &.active,
+  :focus,
+  :hover {
     color: var(--txt-color-blue);
   }
 `;
