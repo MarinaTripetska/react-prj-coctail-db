@@ -5,8 +5,9 @@ export const ContentThumb = styled.div`
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
+  /* align-items: flex-start; */
+  align-items: center;
+  gap: 60px;
 `;
 
 export const Image = styled.img`

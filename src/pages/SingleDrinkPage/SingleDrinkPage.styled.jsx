@@ -3,11 +3,15 @@ import BgImage from "../../assets/images/bg-for-drink.jpg";
 
 export const DrinkThumb = styled.div`
   padding: 45px 30px;
-  /* background-image: url(${BgImage}); */
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(${BgImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
+  overflow: hidden;
   position: relative;
 `;
 
@@ -26,7 +30,7 @@ export const CathegoryGrid = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   gap: 25px;
-  max-width: 250px;
+  min-width: 250px;
 
   position: absolute;
   right: -50px;
