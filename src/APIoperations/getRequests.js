@@ -48,6 +48,38 @@ const getShakeDrinks = async () => {
   const resp = await baseUrl.get(`filter.php?c=Shake`);
   return resp;
 };
+const getOtherDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Other/Unknown`);
+  return resp;
+};
+const getCocoaDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Cocoa`);
+  return resp;
+};
+const getShotDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Shot`);
+  return resp;
+};
+const getCoffeeTeaDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=coffee%20/%20tea`);
+  return resp;
+};
+const getHomemadeLiqueurDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Homemade%20Liqueur`);
+  return resp;
+};
+const getPunchPartyDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Punch%20/%20Party%20Drink`);
+  return resp;
+};
+const getSoftDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Soft%20Drink`);
+  return resp;
+};
+const getBeerDrinks = async () => {
+  const resp = await baseUrl.get(`filter.php?c=Beer`);
+  return resp;
+};
 
 const getIngredientsIcons = async (ing) => {
   const resp = await axios.get(
@@ -67,4 +99,12 @@ export {
   getShakeDrinks,
   getCoktailDrinks,
   getIngredientsIcons,
+  getOtherDrinks,
+  getCocoaDrinks,
+  getShotDrinks,
+  getCoffeeTeaDrinks,
+  getHomemadeLiqueurDrinks,
+  getPunchPartyDrinks,
+  getBeerDrinks,
+  getSoftDrinks,
 };
