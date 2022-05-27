@@ -74,7 +74,8 @@ const SingleDrinkPage = () => {
               <div>
                 <TitleSecond>Drink glass and ingredients</TitleSecond>
                 <ul>
-                  <li>{drink.strGlass}</li>
+                  <Ingredient>{drink.strGlass}</Ingredient>
+                  <hr />
                   {getIingredients(drink).map((ing, i) => (
                     <Ingredient key={ing}>
                       <span>{ing}</span>
