@@ -6,17 +6,12 @@ import { Toast } from "components/Toast";
 import {
   CathegoryGrid,
   CathegoryItem,
-  ContentThumb,
   DrinkThumb,
-  Image,
-  Ingredient,
-  Instructions,
-  TextThumb,
   Title,
-  TitleSecond,
 } from "./SingleDrinkPage.styled";
 import { MainContainer } from "components/BasicStyledComponents";
 import { slugify } from "HelperOperations/slugify";
+import { SingleDrinkView } from "views/SingleDrinkView";
 
 const SingleDrinkPage = () => {
   const { drinksId } = useParams();
@@ -32,18 +27,6 @@ const SingleDrinkPage = () => {
   );
 
   const drink = data?.data?.drinks[0];
-
-  const getIingredients = (drink) =>
-    Object.keys(drink)
-      .filter((key) => key.includes("strIngredient"))
-      .map((key) => drink[key])
-      .filter((value) => value);
-
-  const getMeasure = (drink) =>
-    Object.keys(drink)
-      .filter((key) => key.includes("strMeasure"))
-      .map((key) => drink[key])
-      .filter((value) => value);
 
   if (isLoading) {
     return <Loader />;
@@ -67,30 +50,8 @@ const SingleDrinkPage = () => {
               </Link>
             </CathegoryItem>
           </CathegoryGrid>
-          <ContentThumb>
-            <Image src={drink.strDrinkThumb} alt={drink.strDrink} />
 
-            <TextThumb>
-              <div>
-                <TitleSecond>Drink glass and ingredients</TitleSecond>
-                <ul>
-                  <Ingredient>{drink.strGlass}</Ingredient>
-                  <hr />
-                  {getIingredients(drink).map((ing, i) => (
-                    <Ingredient key={ing}>
-                      <span>{ing}</span>
-                      <span>{getMeasure(drink)[i]}</span>
-                    </Ingredient>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <TitleSecond>How to make it</TitleSecond>
-                <Instructions>{drink.strInstructions}</Instructions>
-              </div>
-            </TextThumb>
-          </ContentThumb>
+          <SingleDrinkView drink={drink} />
         </MainContainer>
       </DrinkThumb>
     );

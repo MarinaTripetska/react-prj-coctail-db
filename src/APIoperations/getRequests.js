@@ -43,10 +43,19 @@ const getCoktailDrinks = async () => {
   const resp = await baseUrl.get(`filter.php?c=Cocktail`);
   return resp;
 };
+
 const getShakeDrinks = async () => {
   const resp = await baseUrl.get(`filter.php?c=Shake`);
   return resp;
 };
+
+const getIngredientsIcons = async (ing) => {
+  const resp = await axios.get(
+    `https://www.thecocktaildb.com/images/ingredients/${ing}-Small.png`
+  );
+  return resp;
+};
+
 export {
   getDrinksByName,
   getDrinksByFirstLetter,
@@ -57,4 +66,5 @@ export {
   getOrdinaryDrinks,
   getShakeDrinks,
   getCoktailDrinks,
+  getIngredientsIcons,
 };
