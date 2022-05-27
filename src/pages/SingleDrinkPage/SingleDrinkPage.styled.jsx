@@ -34,7 +34,7 @@ export const CathegoryGrid = styled.ul`
 
   position: absolute;
   right: -50px;
-  top: 20px;
+  top: 5px;
 `;
 
 export const CathegoryItem = styled.li`

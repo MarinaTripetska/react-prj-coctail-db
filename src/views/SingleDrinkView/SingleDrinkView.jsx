@@ -20,23 +20,25 @@ export const SingleDrinkView = ({ drink }) => {
     .filter((value) => value);
 
   return (
-    <ContentThumb>
-      <Image src={drink.strDrinkThumb} alt={drink.strDrink} />
-
-      <TextThumb>
+    <>
+      <ContentThumb>
         <div>
-          <Title>Drink glass and ingredients</Title>
-          <GlassInfo>{drink.strGlass}</GlassInfo>
-          <hr />
-          <IngredientsList ingredients={ingredients} measure={measure} />
+          <Image src={drink.strDrinkThumb} alt={drink.strDrink} />
+          <GlassInfo>Glass you need: {drink.strGlass}</GlassInfo>
         </div>
 
-        <div>
-          <Title>How to make it</Title>
+        <TextThumb>
+          <div>
+            <Title>Drink ingredients</Title>
+            <IngredientsList ingredients={ingredients} measure={measure} />
+          </div>
+        </TextThumb>
+      </ContentThumb>
 
-          <Instructions>{drink.strInstructions}</Instructions>
-        </div>
-      </TextThumb>
-    </ContentThumb>
+      <div>
+        <Title>How to make it</Title>
+        <Instructions>{drink.strInstructions}</Instructions>
+      </div>
+    </>
   );
 };

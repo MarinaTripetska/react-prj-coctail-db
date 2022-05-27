@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContentThumb = styled.div`
-  padding: 30px 0;
+  padding: 40px 0;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -22,6 +22,7 @@ export const TextThumb = styled.div`
 `;
 
 export const Title = styled.h2`
+  text-align: center;
   font-weight: 600;
   font-size: 28px;
   color: var(--txt-color-blue);
@@ -31,10 +32,14 @@ export const Instructions = styled.p`
   color: var(--txt-color-white);
   font-weight: 500;
   font-size: 18px;
+  margin-top: 20px;
 `;
 
 export const GlassInfo = styled.p`
-  color: var(--txt-color-white);
+  color: var(--txt-color-grey);
   font-weight: 500;
   font-size: 18px;
+  font-style: italic;
+  padding: 10px 0;
+  text-align: center;
 `;

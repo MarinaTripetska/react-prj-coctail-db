@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { GoSearch } from "react-icons/go";
 export const Form = styled.form`
-  margin: 40px 0;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
 `;

@@ -28,6 +28,7 @@ const DrinksShakeView = load("views/DrinksShakeView");
 const SingleDrinkPage = load("pages/SingleDrinkPage");
 
 const MainThumb = styled.main`
+  padding-top: 100px;
   background-color: var(--main-bg-color);
 `;
 

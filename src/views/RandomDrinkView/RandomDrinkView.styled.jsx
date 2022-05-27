@@ -6,8 +6,7 @@ export const StyledThumb = styled.div`
   justify-content: center;
   align-items: center;
   gap: 35px;
-  padding: 60px 0;
-  margin-top: 35px;
+  padding: 35px 0;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -24,7 +23,7 @@ export const TitleThumb = styled.div`
 
 export const Gradient = styled.div`
   position: absolute;
-  top: 155px;
+  top: 130px;
   z-index: 2;
   height: 600px;
   width: 1000px;
