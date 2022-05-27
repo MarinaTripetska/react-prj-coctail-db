@@ -1,86 +1,40 @@
 import { GridList, Nav, NavLinkStyled } from "./Navigation.styled";
 import { useLocation } from "react-router-dom";
-// import { NavButton } from "components/NavButton";
+import { NavButton } from "components/NavButton";
 
 export const Navigation = () => {
   const location = useLocation();
-  // const pathname = location.pathname;
-  // const pathnameFrom = location.state?.from;
-  // const searchFrom = location.state?.search;
+  const shouldShowNavBtn = location.pathname !== "/";
 
   return (
     <Nav>
       <GridList>
-        {/* {pathnameFrom && pathname !== "/" && (
+        {shouldShowNavBtn && (
           <li>
             <NavButton />
           </li>
-        )} */}
+        )}
         <li>
-          <NavLinkStyled
-            to="/"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
-            Main page
-          </NavLinkStyled>
+          <NavLinkStyled to="/">Main page</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled
-            to="/drinks/alcoholic"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
-            Alcoholic
-          </NavLinkStyled>
+          <NavLinkStyled to="/drinks/alcoholic">Alcoholic</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled
-            to="/drinks/non-alcoholic"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
+          <NavLinkStyled to="/drinks/non-alcoholic">
             Non Alcoholic
           </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled
-            to="/drinks/ordinary-drink"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
+          <NavLinkStyled to="/drinks/ordinary-drink">
             Ordinary Drinks
           </NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled
-            to="/drinks/cocktail"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
-            Cocktails
-          </NavLinkStyled>
+          <NavLinkStyled to="/drinks/cocktail">Cocktails</NavLinkStyled>
         </li>
         <li>
-          <NavLinkStyled
-            to="/drinks/shake"
-            state={{
-              from: location.pathname,
-              search: location.search,
-            }}
-          >
-            Shake
-          </NavLinkStyled>
+          <NavLinkStyled to="/drinks/shake">Shake</NavLinkStyled>
         </li>
       </GridList>
     </Nav>

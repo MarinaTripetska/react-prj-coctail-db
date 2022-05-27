@@ -11,6 +11,7 @@ export const Nav = styled.nav`
 export const GridList = styled.ul`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 40px;
 `;
 

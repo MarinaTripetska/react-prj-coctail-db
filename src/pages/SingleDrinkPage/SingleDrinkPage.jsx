@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import { getDrinkById } from "APIoperations/getRequests";
 import { Loader } from "components/Loader";
@@ -19,7 +19,6 @@ import { MainContainer } from "components/BasicStyledComponents";
 import { slugify } from "HelperOperations/slugify";
 
 const SingleDrinkPage = () => {
-  const location = useLocation();
   const { drinksId } = useParams();
 
   const { data, isSuccess, isLoading } = useQuery(
@@ -58,24 +57,12 @@ const SingleDrinkPage = () => {
 
           <CathegoryGrid>
             <CathegoryItem>
-              <Link
-                to={`/drinks/${slugify(drink.strAlcoholic)}`}
-                state={{
-                  from: location.pathname,
-                  search: location.search,
-                }}
-              >
+              <Link to={`/drinks/${slugify(drink.strAlcoholic)}`}>
                 {drink.strAlcoholic}
               </Link>
             </CathegoryItem>
             <CathegoryItem>
-              <Link
-                to={`/drinks/${slugify(drink.strCategory)}`}
-                state={{
-                  from: location.pathname,
-                  search: location.search,
-                }}
-              >
+              <Link to={`/drinks/${slugify(drink.strCategory)}`}>
                 {drink.strCategory}
               </Link>
             </CathegoryItem>

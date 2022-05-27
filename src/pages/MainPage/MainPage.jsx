@@ -1,11 +1,6 @@
 import { useQuery } from "react-query";
 import { AlphabetNavigationList } from "components/AlphabetNavigationList";
-import {
-  Outlet,
-  // useLocation,
-  useNavigate,
-  useSearchParams,
-} from "react-router-dom";
+import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput";
 import DrinksByNameView from "views/DrinksByNameView";
 import { BoldTxt, NoResultTxt } from "./MainPage.styled";
@@ -14,7 +9,6 @@ import { Toast } from "components/Toast";
 import { getDrinksByName } from "APIoperations/getRequests";
 
 const MainPage = () => {
-  // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get("searchQuery");
   const navigate = useNavigate();
@@ -39,7 +33,9 @@ const MainPage = () => {
     }
 
     setSearchParams({ searchQuery: newSearchQuery });
-    navigate(`/drinks/?searchQuery=${newSearchQuery}`, { replace: true });
+    navigate(`/drinks/?searchQuery=${newSearchQuery}`, {
+      replace: true,
+    });
   };
 
   const hasDrinks = Boolean(data?.data?.drinks);

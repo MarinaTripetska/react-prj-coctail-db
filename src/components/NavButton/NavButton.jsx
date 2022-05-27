@@ -1,32 +1,33 @@
-import { Link, useLocation } from "react-router-dom";
-import { ImArrowLeft2 } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
+import { TiArrowBackOutline } from "react-icons/ti";
 import styled from "styled-components";
 
-const StyledLink = styled(Link)`
-  display: inline-block;
-  padding: 5px;
+const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 25px;
+  line-height: 1;
+
   text-decoration: none;
-  color: var(--txt-color-blue);
+  color: var(--txt-color-grey);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   transition: color 350ms ease-in-out;
 
   :hover,
   :focus {
-    color: var(--txt-color-white);
+    color: var(--txt-color-blue);
   }
 `;
 
 export const NavButton = () => {
-  const location = useLocation();
-  const pathname = location.state?.from;
-  const search = location.state?.search;
+  const navigate = useNavigate();
 
   return (
-    <StyledLink
-      to={pathname ? `${pathname}${search}` : "/"}
-      // to={pathname ? `${pathname}` : "/"}
-      title="Comeback button"
-    >
-      <ImArrowLeft2 />
-    </StyledLink>
+    <Button type="button" onClick={() => navigate(-1)}>
+      <TiArrowBackOutline />
+    </Button>
   );
 };
